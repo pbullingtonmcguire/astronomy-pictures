@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 import { BASE_URL } from "../globals"
 
-const DailyPicture = () => {
+const DailyPicture = (props) => {
 
     
     // const logApiCall = async () => {
@@ -15,18 +15,18 @@ const DailyPicture = () => {
 
     const [pictureData, setPictureData] = useState({})
 
-    const getPicture = async () => {
-        const res = await axios.get(BASE_URL)
+    const getPicture = async (apiParams) => {
+        const res = await axios.get(BASE_URL + apiParams)
         setPictureData(res.data)
         //console.log(pictureData)
     }
 
-    useEffect(() => {getPicture()}, [])
+    useEffect(() => {getPicture(props.apiParams)}, [props.apiParams])
 
     return (
         <div>
             <img 
-                class='daily-picture' 
+                className='daily-picture' 
                 src={pictureData.url} 
                 alt=''
             />
