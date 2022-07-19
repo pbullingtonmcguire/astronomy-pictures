@@ -18,7 +18,7 @@ const DailyPicture = () => {
     const getPicture = async () => {
         const res = await axios.get(BASE_URL)
         setPictureData(res.data)
-        console.log(pictureData)
+        //console.log(pictureData)
     }
 
     useEffect(() => {getPicture()}, [])
@@ -30,6 +30,7 @@ const DailyPicture = () => {
                 src={pictureData.url} 
                 alt=''
             />
+            <p>{pictureData.explanation}</p>
         </div>
     )
 }
