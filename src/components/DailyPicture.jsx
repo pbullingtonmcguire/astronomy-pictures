@@ -30,6 +30,7 @@ const DailyPicture = () => {
                 src={pictureData.url} 
                 alt=''
             />
+            <h3>{pictureData.title}</h3>
             <p>{pictureData.explanation}</p>
         </div>
     )
