@@ -1,4 +1,5 @@
 import './App.css';
+import Selector from './components/Selector';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         src='https://apod.nasa.gov/apod/image/2207/HalfPleiades_Venkatraman_1365.jpg' 
         alt=''
       />
+      <Selector />
     </div>
   );
 }
