@@ -1,7 +1,7 @@
 import './App.css';
 import Selector from './components/Selector';
 import DailyPicture from './components/DailyPicture';
-import {API_KEY, BASE_URL} from './globals.js'
+import BASE_URL from './globals.js'
 
 function App() {
   return (
