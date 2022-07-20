@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <h1>Astronomy Picture of the Day</h1>
       <DailyPicture pictureDate={pictureDate} setPictureDate={setPictureDate} />
-      <Selector pictureDate={pictureDate} setpictureDate={setPictureDate} />
+      <Selector pictureDate={pictureDate} setPictureDate={setPictureDate} />
     </div>
   );
 }
