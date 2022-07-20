@@ -17,7 +17,7 @@ function App() {
       <h1>Astronomy Picture of the Day</h1>
       <DailyPicture pictureDate={pictureDate} setPictureDate={setPictureDate} />
       <Selector pictureDate={pictureDate} setPictureDate={setPictureDate} />
-      <RandomPictures />
+      <RandomPictures setPictureDate={setPictureDate} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 
 import { BASE_URL } from "../globals"
 
-const RandomPictures = () => {
+const RandomPictures = (props) => {
 
     const [pictures, setPictures] = useState([])
 
@@ -14,6 +14,13 @@ const RandomPictures = () => {
         setPictures(arr)
     }
 
+    const selectPic = (event) => {
+        const date = event.target.dataset.date
+        console.log(event.target)
+        console.log(event.target.dataset.date)
+        props.setPictureDate(date)
+    }
+
     useEffect(() => {
         getPictures()
     }, [])
@@ -22,7 +29,7 @@ const RandomPictures = () => {
         <div>
             <div>
                 {pictures.map(picture => (
-                    <img src={picture.url} alt="" key={picture.url} />
+                    <img src={picture.url} alt={picture.title} key={picture.url} data-date={picture.date} onClick={(event) => {selectPic(event)}} />
                 ))}
             </div>
         </div>
