@@ -8,14 +8,14 @@ function App() {
 
 
 
-  const [apiParams, setapiParams] = useState('')
+  const [pictureDate, setpictureDate] = useState('')
   
 
   return (
     <div className="App">
       <h1>Astronomy Picture of the Day</h1>
-      <DailyPicture apiParams={apiParams} />
-      <Selector apiParams={apiParams} setapiParams={setapiParams} />
+      <DailyPicture pictureDate={pictureDate} />
+      <Selector pictureDate={pictureDate} setpictureDate={setpictureDate} />
     </div>
   );
 }

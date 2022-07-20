@@ -15,13 +15,19 @@ const DailyPicture = (props) => {
 
     const [pictureData, setPictureData] = useState({})
 
-    const getPicture = async (apiParams) => {
-        const res = await axios.get(BASE_URL + apiParams)
+    const getPicture = async (pictureDate) => {
+        let res
+        if (pictureDate) {
+            res = await axios.get(BASE_URL + 'date=' + pictureDate)
+        } else {
+            res = await axios.get(BASE_URL)
+        }
+        
         setPictureData(res.data)
         //console.log(pictureData)
     }
 
-    useEffect(() => {getPicture(props.apiParams)}, [props.apiParams])
+    useEffect(() => {getPicture(props.pictureDate)}, [props.pictureDate])
 
     return (
         <div>

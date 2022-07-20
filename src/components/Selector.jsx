@@ -1,7 +1,7 @@
 const Selector = () => {
 
     return (
-        <div class='selector'>
+        <div className='selector'>
             <button>{'<'}</button>
             <input type="date" />
             <button>{'>'}</button>
