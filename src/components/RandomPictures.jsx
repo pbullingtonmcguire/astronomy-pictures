@@ -19,7 +19,13 @@ const RandomPictures = () => {
     }, [])
 
     return (
-        <div></div>
+        <div>
+            <div>
+                {pictures.map(picture => (
+                    <img src={picture.url} alt="" key={picture.url} />
+                ))}
+            </div>
+        </div>
     )
 }
 
