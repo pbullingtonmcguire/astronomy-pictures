@@ -40,11 +40,20 @@ const DailyPicture = (props) => {
     return (
         <div>
             <a href={pictureData.hdurl} target='_blank' rel='noreferrer'>
-                <img 
-                    className='daily-picture' 
-                    src={pictureData.url} 
-                    alt={`Copyright: ` + pictureData.copyright ? pictureData.copyright : 'public domain'}
-                />
+                {
+                    pictureData.media_type === 'image' ?
+                        <img 
+                            className='daily-picture' 
+                            src={pictureData.url} 
+                            alt={`Copyright: ` + pictureData.copyright ? pictureData.copyright : 'public domain'}
+                        />
+                    :
+                        <iframe 
+                            src={pictureData.url} 
+                            frameborder="0"
+                            width='1000' height='500' 
+                        />
+                }
             </a>
             <h3>{pictureData.title}</h3>
             <p>{pictureData.explanation}</p>
