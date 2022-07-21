@@ -32,6 +32,7 @@ const RandomPictures = (props) => {
                     <img src={picture.url} alt={picture.title} key={picture.url} data-date={picture.date} onClick={(event) => {selectPic(event)}} />
                 ))}
             </div>
+            <button onClick={getPictures}>Randomize</button>
         </div>
     )
 }
