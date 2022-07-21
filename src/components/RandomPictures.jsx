@@ -29,7 +29,13 @@ const RandomPictures = (props) => {
         <div>
             <div className="random-picture-bar">
                 {pictures.map(picture => (
-                    <img src={picture.url} alt={picture.title} key={picture.url} data-date={picture.date} onClick={(event) => {selectPic(event)}} />
+                    <img 
+                        src={(picture.media_type === 'image') ? picture.url : picture.thumbnail_url} 
+                        alt={picture.title} 
+                        key={picture.url} 
+                        data-date={picture.date} 
+                        onClick={(event) => {selectPic(event)}} 
+                    />
                 ))}
             </div>
             <button onClick={getPictures} className='randomize-pictures'>Randomize</button>
