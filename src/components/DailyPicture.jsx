@@ -52,6 +52,7 @@ const DailyPicture = (props) => {
                             src={pictureData.url} 
                             frameborder="0"
                             width='1000' height='500' 
+                            title={pictureData.title}
                         />
                 }
             </a>
